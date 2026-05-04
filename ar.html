@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AR Fix</title>
+
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/three.js/build/ar-threex-location-only.js"></script>
+</head>
+
+<body style="margin:0; overflow:hidden;">
+
+<a-scene embedded>
+
+  <a-box position="0 1 -3" color="yellow"></a-box>
+
+  <a-text value="AR TEST OK 👌"
+          position="0 2 -3"
+          align="center"
+          color="white">
+  </a-text>
+
+  <a-entity camera></a-entity>
+
+</a-scene>
+
+</body>
+</html>
