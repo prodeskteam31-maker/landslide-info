@@ -27,7 +27,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.52);
+      background: rgba(0,0,0,0.35);
       z-index: 0;
     }
 
@@ -43,20 +43,18 @@
     }
 
     .lang-block {
-      background: rgba(255,255,255,0.13);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 14px;
-      padding: 14px 18px;
+      background: transparent;
+      border-left: 3px solid;
+      border-radius: 0;
+      padding: 12px 18px;
       display: flex;
       align-items: flex-start;
       gap: 14px;
     }
 
-    .lang-block:nth-child(1) { border-left: 3px solid #4aaa6a; }
-    .lang-block:nth-child(2) { border-left: 3px solid #6ab0d0; }
-    .lang-block:nth-child(3) { border-left: 3px solid #c8813a; }
+    .lang-block:nth-child(1) { border-color: #4aaa6a; }
+    .lang-block:nth-child(2) { border-color: #6ab0d0; }
+    .lang-block:nth-child(3) { border-color: #c8813a; }
 
     .lang-label {
       font-size: 9px;
@@ -69,15 +67,16 @@
       margin-top: 2px;
     }
 
-    .lang-block:nth-child(1) .lang-label { background: rgba(74,170,106,0.25); color: #7de0a0; }
-    .lang-block:nth-child(2) .lang-label { background: rgba(106,176,208,0.25); color: #93d0ee; }
-    .lang-block:nth-child(3) .lang-label { background: rgba(200,129,58,0.25); color: #e8aa6a; }
+    .lang-block:nth-child(1) .lang-label { background: rgba(74,170,106,0.2); color: #7de0a0; border: 1px solid rgba(74,170,106,0.4); }
+    .lang-block:nth-child(2) .lang-label { background: rgba(106,176,208,0.2); color: #93d0ee; border: 1px solid rgba(106,176,208,0.4); }
+    .lang-block:nth-child(3) .lang-label { background: rgba(200,129,58,0.2); color: #e8aa6a; border: 1px solid rgba(200,129,58,0.4); }
 
     .lang-text {
       font-size: 0.82rem;
       line-height: 1.6;
-      font-weight: 300;
-      color: rgba(255,255,255,0.92);
+      font-weight: 400;
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
 
     .lang-block:nth-child(1) .lang-text {
@@ -89,7 +88,7 @@
 
     @media (max-width: 500px) {
       .lang-text { font-size: 0.78rem; }
-      .lang-block { padding: 12px 14px; gap: 10px; }
+      .lang-block { padding: 10px 14px; gap: 10px; }
     }
   </style>
 </head>
