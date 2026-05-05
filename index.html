@@ -51,6 +51,7 @@
       display: flex;
       align-items: flex-start;
       gap: 14px;
+      height: 90px;
     }
 
     .lang-block:nth-child(1) { border-left-color: #4aaa6a; }
@@ -66,6 +67,8 @@
       border-radius: 20px;
       flex-shrink: 0;
       margin-top: 2px;
+      min-width: 36px;
+      text-align: center;
     }
 
     .lang-block:nth-child(1) .lang-label { background: rgba(74,170,106,0.25); color: #7de0a0; border: 1px solid rgba(74,170,106,0.4); }
@@ -78,18 +81,24 @@
       font-weight: 400;
       color: rgba(255,255,255,0.95);
       text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      text-align: justify;
+      flex: 1;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
 
     .lang-block:nth-child(1) .lang-text {
       direction: rtl;
       font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
       font-size: 0.85rem;
-      text-align: right;
+      text-align: justify;
     }
 
     @media (max-width: 500px) {
-      .lang-text { font-size: 0.78rem; }
-      .lang-block { padding: 10px 14px; gap: 10px; }
+      .lang-block { height: 100px; padding: 10px 14px; gap: 10px; }
+      .lang-text { font-size: 0.78rem; -webkit-line-clamp: 4; }
     }
   </style>
 </head>
