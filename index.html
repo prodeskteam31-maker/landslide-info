@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Surveillance des glissements de terrain</title>
+    <title>Surveillance glissements – AR+EN+FR</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             min-height: 100vh;
@@ -23,7 +19,6 @@
             position: relative;
         }
 
-        /* Légère surcouche sombre pour la lisibilité */
         body::before {
             content: "";
             position: fixed;
@@ -31,128 +26,120 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.45);
             z-index: 0;
         }
 
         .container {
             position: relative;
             z-index: 1;
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
+            gap: 20px;
             justify-content: center;
+            align-items: stretch;
         }
 
         .card {
             flex: 1;
-            min-width: 280px;
+            min-width: 250px;
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(8px);
-            border-radius: 28px;
-            padding: 28px 22px;
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 24px;
+            padding: 22px 18px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s;
             border: 1px solid rgba(255, 255, 255, 0.4);
-            text-align: center;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.35);
+            transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.96);
         }
 
-        /* Couleurs par langue */
-        .arabic {
+        /* Couleurs différentes pour chaque carte */
+        .card-ar {
             border-top: 8px solid #2c7a4d;
             background: rgba(245, 255, 250, 0.92);
         }
-        .arabic .lang-label { background-color: #2c7a4d; }
+        .card-ar .lang-label { background-color: #2c7a4d; }
 
-        .english {
+        .card-en {
             border-top: 8px solid #1e6f9f;
             background: rgba(235, 248, 255, 0.92);
         }
-        .english .lang-label { background-color: #1e6f9f; }
+        .card-en .lang-label { background-color: #1e6f9f; }
 
-        .french {
+        .card-fr {
             border-top: 8px solid #b5651e;
             background: rgba(255, 248, 235, 0.92);
         }
-        .french .lang-label { background-color: #b5651e; }
+        .card-fr .lang-label { background-color: #b5651e; }
 
         .lang-label {
             display: inline-block;
-            padding: 6px 18px;
+            padding: 5px 16px;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: bold;
             letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             color: white;
             text-transform: uppercase;
-            backdrop-filter: blur(4px);
+            align-self: center;
         }
 
         .card p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.55;
             font-weight: 500;
             color: #1e2a32;
-            text-align: justify;   /* Texte justifié */
+            text-align: justify;
             word-break: break-word;
+            flex: 1;
         }
 
-        /* Direction pour le texte arabe */
-        .arabic p {
+        /* Direction pour le texte arabe (dans la carte AR) */
+        .card-ar p {
             direction: rtl;
             font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.05rem;
             text-align: justify;
         }
 
-        /* Responsive */
-        @media (max-width: 850px) {
-            .card p { font-size: 1rem; }
-            .arabic p { font-size: 1.1rem; }
-            .card { padding: 20px 16px; }
-        }
-
-        @media (max-width: 700px) {
-            .container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .card { width: 100%; }
+        @media (max-width: 780px) {
+            .container { flex-direction: column; align-items: center; }
+            .card { width: 90%; min-width: auto; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 1. Arabe -->
-        <div class="card arabic">
-            <div class="lang-label">العربية</div>
+        <!-- Carte "AR" (contenu arabe) -->
+        <div class="card card-ar">
+            <div class="lang-label">AR</div>
             <p>
                 يهدف هذا المشروع إلى مراقبة الانزلاقات الأرضية في منطقة الأبيار و تلملي باستخدام تقنيات حديثة، من أجل اكتشاف حركة التربة في الوقت المناسب والوقاية من الأخطار.
             </p>
         </div>
 
-        <!-- 2. Anglais -->
-        <div class="card english">
-            <div class="lang-label">ENGLISH</div>
+        <!-- Carte Anglais -->
+        <div class="card card-en">
+            <div class="lang-label">EN</div>
             <p>
                 This project aims to monitor landslides in the El Biar and Telemly area using modern techniques, in order to detect soil movement in a timely manner and prevent risks.
             </p>
         </div>
 
-        <!-- 3. Français -->
-        <div class="card french">
-            <div class="lang-label">FRANÇAIS</div>
+        <!-- Carte Français -->
+        <div class="card card-fr">
+            <div class="lang-label">FR</div>
             <p>
-                Ce projet vise à surveiller les glissements de terrain dans la région d'El Biar et Telemly en utilisant des techniques modernes, afin de détecter les mouvements de sol en temps utile et de prévenir les risques.
+                Ce projet vise à surveiller les glissements de terrain dans la région d'El Biar et Telemly ,en utilisant des techniques modernes, afin de détecter les mouvements de sol en temps utile et de prévenir les risques.
             </p>
         </div>
     </div>
