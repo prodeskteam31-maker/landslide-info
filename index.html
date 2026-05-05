@@ -9,18 +9,19 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
-      height: 100%;
-      overflow: hidden;
+      min-height: 100%;
     }
 
     body {
       background-image: url('fond-glissement.jpg');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       font-family: 'DM Sans', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
     }
 
     body::before {
@@ -51,7 +52,6 @@
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      height: 90px;
     }
 
     .lang-block:nth-child(1) { border-left-color: #4aaa6a; }
@@ -83,10 +83,6 @@
       text-shadow: 0 1px 3px rgba(0,0,0,0.5);
       text-align: justify;
       flex: 1;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
     }
 
     .lang-block:nth-child(1) .lang-text {
@@ -99,8 +95,8 @@
     .bold { font-weight: 700; color: #fff; }
 
     @media (max-width: 500px) {
-      .lang-block { height: 100px; padding: 10px 14px; gap: 10px; }
-      .lang-text { font-size: 0.78rem; -webkit-line-clamp: 4; }
+      .lang-text { font-size: 0.78rem; }
+      .lang-block { padding: 10px 14px; gap: 10px; }
     }
   </style>
 </head>
@@ -119,7 +115,7 @@
 
     <div class="lang-block">
       <span class="lang-label">FR</span>
-      <p class="lang-text">Ce projet vise à surveiller les glissements de terrain dans la région d'<span class="bold">El Biar et Télemly</span>, en utilisant des techniques modernes, afin de détecter les mouvements de sol en temps utile et de prévenir les risques.</p>
+      <p class="lang-text">Ce projet vise à surveiller les glissements de terrain dans la région d'<span class="bold">El Biar et Telemly</span>, en utilisant des techniques modernes, afin de détecter les mouvements de sol en temps utile et de prévenir les risques.</p>
     </div>
 
   </div>
